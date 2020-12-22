@@ -5,8 +5,10 @@ from bs4 import BeautifulSoup
 import glob
 import sqlalchemy
 from sqlalchemy import create_engine
+import tweepy
+from timeit import default_timer as timer
 
-
+'''
 df = pd.read_csv(r"I:\python\pycharmprojects\udacityproject1\csv from classes\bestofrt.tsv" , sep='\t')
 print(df.head())
 
@@ -20,7 +22,7 @@ soup = BeautifulSoup(response.content, 'lxml') #create variable to hold response
 
 print(soup.find('title').contents)
 
-'''
+FOR XML files : 
 # List of dictionaries to build file by file and later convert to a DataFrame
 df_list = []
 folder = 'rt_html'
@@ -39,9 +41,9 @@ for movie_html in os.listdir(folder):
                         'audience_score': int(audience_score),
                         'number_of_audience_ratings': int(num_audience_ratings)})
 df = pd.DataFrame(df_list, columns = ['title', 'audience_score', 'number_of_audience_ratings'])
-'''
 
-'''
+
+
 USING GLOB
 df_list = []
 for ebert_review in glob.glob('ebert_reviews/*.txt'):
@@ -58,9 +60,9 @@ for ebert_review in glob.glob('ebert_reviews/*.txt'):
                         'review_text': review_text})
 df = pd.DataFrame(df_list, columns = ['title', 'review_url', 'review_text'])
 df.head()
-'''
 
-'''
+
+
 
 Try not to use REQUESTS library for images, use PIL and IO libraries as below : 
 
@@ -68,9 +70,9 @@ from PIL import Image
 from io import BytesIO
 r = requests.get(url)
 i = Image.open(BytesIO(r.content))
-'''
 
-'''
+
+
 SQLAlchemy :
 CONNECT:
 
@@ -85,6 +87,47 @@ df.to_sql('master', engine, index=False)
 
 READ:
 df_gather = pd.read_sql('SELECT * FROM master', engine)
+
+JSON files from twitter : 
+
+with open('I:\\tweet_json.txt', 'a+', encoding = 'utf8') as file:
+    for tweet_id in df1.tweet_id:
+        try:
+            temp = api.get_status(tweet_id)
+            json.dump(temp._json, file)
+            file.write('\n')
+        except:
+            continue
+            
+            FROM CLASS
+with open('tweet_json.txt', 'w') as outfile:
+    # This loop will likely take 20-30 minutes to run because of Twitter's rate limit
+    for tweet_id in tweet_ids:
+        count += 1
+        print(str(count) + ": " + str(tweet_id))
+        try:
+            tweet = api.get_status(tweet_id, tweet_mode='extended')
+            print("Success")
+            json.dump(tweet._json, outfile)
+            outfile.write('\n')
+        except tweepy.TweepError as e:
+            print("Fail")
+            fails_dict[tweet_id] = e
+            pass
+end = timer()
+print(end - start)
+print(fails_dict)
+
+MY DF code
+df3 = pd.DataFrame(columns = ['tweet_id', 'retweet_count', 'favorite_count'])
+with open ('tweet_json.txt') as file:
+    for line in file:
+        tweet = json.loads(line)
+        t_id = tweet['id_str']
+        r_ct = tweet['retweet_count']
+        f_ct = tweet['favorite_count']
+        df3 = df3.append(pd.DataFrame([[t_id,r_ct,f_ct]],columns = ['tweet_id', 'retweet_count', 'favorite_count']))
+df3
 '''
 
 def gather(source,out_name):
@@ -119,7 +162,9 @@ def gather(source,out_name):
 
 gather('I:\python\pycharmprojects\udacityproject1\csv from classes\twitter-archive-enhanced.csv',wrangle_project)
 
-
+def tweeps(consumer_key,consumer_secret,target_info):
+   auth = tweepy.AppAuthHandler(consumer_key,consumer_secret)
+   print(consumer_key,consumer_secret)
 
 
 
