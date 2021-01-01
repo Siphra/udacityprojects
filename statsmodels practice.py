@@ -107,3 +107,4 @@ old_page_converted = np.random.choice([0,1], dfc.shape[0], replace= True, p=[con
 plt.hist(new_page_converted, color='green')
 plt.hist(old_page_converted, color='red')
 plt.show()
+
