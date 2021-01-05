@@ -1,0 +1,303 @@
+<html>
+<head>
+    <link href="https://staticv2-4.rottentomatoes.com/static/images/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+    <link href="https://staticv2-4.rottentomatoes.com/static/images/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="https://staticv2-4.rottentomatoes.com/static/styles/css/rt_main.css" rel="stylesheet"/>
+</head>
+<body class="body">
+<div id="navMenu" class="modal fade" role="dialog" aria-labelledby="navMenu">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="glyphicon glyphicon-remove">
+                    </span></button>
+                <div class="pull-left">
+                    <ul class="list-inline social">
+                        <li><a id="header-facebook-social-link" class="unstyled fontelloIcon icon-facebook-squared"
+                               href="http://www.facebook.com/rottentomatoes" target="_blank"></a></li>
+                        <li><a id="header-twitter-social-link" class="unstyled fontelloIcon icon-twitter"
+                               href="http://twitter.com/rottentomatoes" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <div class="items">
+                    <div class="item">
+                        <a class="homeTab unstyled navLink fullLink" href="/">
+                            Home
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="boxofficeTab unstyled navLink fullLink" href="/lists/theater/">
+                            Top Box Office
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="theatersTab unstyled navLink fullLink" href="/theaters/">
+                            Tickets &amp; Showtimes
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a class="dvdTab unstyled navLink fullLink" href="/lists/dvd/">
+                            DVD &amp; Streaming
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a class="newsTab unstyled navLink fullLink" href="http://editorialstaging.rottentomatoes.com">
+                            News
+                        </a>
+                    </div>
+                    </div>
+                <div class="loginArea">
+                    <div>
+
+                        <a data-toggle="modal" data-target="#signup" class="signupLink login">SIGN UP</a>
+                        <a data-toggle="modal" data-target="#login" class="loginLink login">LOG IN</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="body_main container">
+    <div id="header_and_leaderboard">
+        <div class="header_main container">
+            <div id="navbar" class="navbar navbar-rt" role="navigation">
+                <div class="navbar-header pull-right hidden-xs">
+                    <div class="header_links">
+                        <a id="header-whats-the-tomatometer" href="/about#whatisthetomatometer">What's
+                            the Tomatometer?</a>
+                        <a id="header-top-bar-critics" href="/critics/">Critics</a>
+                        <div id="headerUserSection" style="display: inline-block;">
+                            <div>
+
+                                <a id="header-top-bar-signup" data-toggle="modal" data-target="#signup"
+                                   class="signupLink login">SIGN UP</a>
+                                <a id="header-top-bar-login" data-toggle="modal" data-target="#login"
+                                   class="loginLink login">LOG IN</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="header_brand_column" class="col-sm-13 col-full-xs">
+                    <div class="hidden-xs desktopNav">
+                        <div id="navbar_brand" class="navbar-brand">
+                            <a id="header-rt-logo" href="/"><img id="original_rt_logo" src="https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png"></a>
+                        </div>
+
+                        <form action="/search/" method="get">
+                            <div class="navbar-searchbox main">
+                                <div class="input-group">
+                                    <input name="search" type="text" class="form-control"
+                                           placeholder="Search movies, TV, actors, more..." id="search-term">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-default searchBtn">
+                                            <em class="glyphicon glyphicon-search"></em>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-close">
+                                        <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-remove">
+                                    </span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="visible-xs mobileNav">
+                        <div>
+                            <a id="mobile-search-button">
+                                <button class="pull-right navbar-button searchButton">
+                                    <em class="glyphicon glyphicon-search white"></em>
+                                </button>
+                            </a>
+                            <script>
+                                (function() {
+                                    require(["fullscreen-search"], function(fullscreenSearch) {
+                                        fullscreenSearch.attach(document.getElementById('mobile-search-button'));
+                                    });
+                                })();
+                            </script>
+                        </div>
+
+                        <div class="navbar-brand">
+                                <a id="header-rt-logo" href="/"> <img src="https://staticv2-4.rottentomatoes.com/static/images/logos/rtlogo.png" /></a>
+                            </div>
+                            <div id="mobile-nav">
+                                <div class="mob-nav-bottom clearfix">
+                                    <ul id="nav-list" class="nav-list">
+                                        <li class="nav-item">
+                                            <a href="/"><i class=" fontelloIcon icon-home"></i>Home</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/browse/in-theaters/"><i class=" fontelloIcon icon-boxoffice"></i>Box Office</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="/browse/tv-list-1/"><i class=" fontelloIcon icon-tv2"></i>TV</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/browse/top-dvd-streaming/"><i class=" fontelloIcon icon-redeem"></i>DVD</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="menu-btn" class="menu-btn" href="javascript:void(0)">
+                                                <i class=" fontelloIcon icon-more"></i>MORE
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="mobile-nav-overlay" class="mobile-nav-overlay">
+                                    <!--mobile dropdown-->
+                                    <ul class="mobile-menu-panel">
+                                        <li class="nav-item"><a href="https://editorial.rottentomatoes.com">News</a></li>
+                                        <li class="nav-item clearfix d-block">
+                                            <div class="login-signup-box pull-left">
+                                                <a id="mobile-signup-btn" data-toggle="modal" data-target="#signup" class="signupLink login btn-login-signup">SIGN UP</a>
+                                                <a id="mobile-login-btn" data-toggle="modal" data-target="#login" class="loginLink login btn-login-signup">LOG IN</a>
+                                            </div>
+                                            <div class="social-media-box pull-right">
+                                                <a href="https://www.facebook.com/rottentomatoes">
+                                                    <i class="fontelloIcon icon-facebook-squared" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://twitter.com/rottentomatoes">
+                                                    <i class="fontelloIcon icon-twitter" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!--mobile dropdown end-->
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div id="menu" class="navbar-nav col-sm-11 hidden-xs">
+                    <ul class="list-inline">
+                        <li class="menuHeader center noSpacing" style="border-radius: 5px">
+                            <a id="movieMenu" role="button" class="h2 white" href="/browse/">
+                                Movies &amp; DVDs<span class="fontelloIcon icon-down-dir"></span>
+                            </a>
+                        </li>
+                        <li class="menuHeader center noSpacing" style="border-radius: 5px">
+                            <a id="tvMenu" class="h2" href="/top-tv/">
+                                TV<span class="fontelloIcon icon-down-dir"></span>
+                            </a>
+                        </li>
+                        <li class="menuHeader center noSpacing" style="border-radius: 5px">
+                            <a id="newsMenu" class="h2" href="https://editorial.rottentomatoes.com">
+                                News<span class="fontelloIcon icon-down-dir"></span>
+                            </a>
+                        </li>
+                        <li class="h2 menuHeader center noSpacing" style="border-radius: 5px" id="header-tickets-showtimes">
+                            <a id="ticketingMenu" href="/showtimes/" class="menuHeader"> Tickets &amp; Showtimes </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="trendingBar hidden-xs">
+                <div class="fr">
+                    <ul id="trending_bar_social" class="list-inline social">
+                        <li class="header">Follow Us</li>
+
+                        <li><a id="header-twitter-social-link"
+                               class="unstyled trendingLink fontelloIcon icon-twitter white"
+                               href="http://twitter.com/rottentomatoes" target="_blank"></a></li>
+                        <li><a id="header-facebook-social-link"
+                               class="unstyled trendingLink fontelloIcon icon-facebook-squared white"
+                               href="http://www.facebook.com/rottentomatoes" target="_blank"></a></li>
+                        <li><a id="header-google-social-link"
+                               class="unstyled trendingLink fontelloIcon icon-gplus white"
+                               href="https://plus.google.com/+RottenTomatoes" target="_blank"></a></li>
+                        <li><a id="header-youtube-social-link"
+                               class="unstyled trendingLink fontelloIcon icon-youtube-play white"
+                               href="http://www.youtube.com/user/rottentomatoes" target="_blank"></a></li>
+                        <li><a id="header-tumblr-social-link"
+                               class="unstyled trendingLink fontelloIcon icon-tumblr white"
+                               href="http://rottentomatoes.tumblr.com/" target="_blank"></a></li>
+                    </ul>
+                </div>
+                <ul class="list-inline trendingEl">
+                    <li class="header">&nbsp;</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div id="main_container" class="container ">
+
+        <div id="mainColumn" class="col col-full-xs">
+            <h1>404 - Not Found</h1>
+
+            <p>Sorry, please try again later.</p>
+
+        </div>
+
+    </div>
+    <div id="foot" class="hidden-xs">
+        <div class="row">
+            <div class="col-xs-5 subnav">
+                <ul class="unstyled">
+                    <li><a id="footer-help" class="unstyled trendingLink" href="/help_desk/">Help</a></li>
+                    <li><a id="footer-about" class="unstyled trendingLink" href="/about/">About Rotten Tomatoes</a></li>
+                    <li><a id="footer-tomatometer" style="cursor: pointer;" class="unstyled trendingLink"
+                           href="/about#whatisthetomatometer">What's the Tomatometer?</a></li>
+                    <li><a id="footer-feedback" class="unstyled trendingLink" href="https://fandango.az1.qualtrics.com/SE/?SID=SV_cGSHgMIu5ivVwAB">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 subnav">
+                <ul>
+                    <li><a id="footer-critics" class="unstyled trendingLink" href="/help_desk/critics/">Critic
+                        Submission</a></li>
+                    <li><a id="footer-licensing" class="unstyled trendingLink"
+                           href="/help_desk/licensing/">Licensing</a></li>
+                    <li><a id="footer-advertise" class="unstyled trendingLink"
+                           href="//www.fandango.com/Advertising.aspx">Advertise</a></li>
+                    <li><a id="footer-jobs" class="unstyled trendingLink" href="//www.fandango.com/careers">Careers</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-7 subnav">
+                </div>
+            <div class="col-xs-8 subnav">
+                <h2>Follow Us</h2>
+                <div>
+                    <a id="footer-follow-us-twitter" class="unstyled trendingLink fontelloIcon icon-twitter footerIcon"
+                       href="http://twitter.com/rottentomatoes"></a>&nbsp;&nbsp;&nbsp;
+                    <a id="footer-follow-us-facebook"
+                       class="unstyled trendingLink fontelloIcon icon-facebook-squared footerIcon"
+                       href="http://www.facebook.com/rottentomatoes"></a>&nbsp;&nbsp;&nbsp;
+                    <a id="footer-follow-us-google" class="unstyled trendingLink fontelloIcon icon-gplus footerIcon"
+                       href="https://plus.google.com/+RottenTomatoes"></a>&nbsp;&nbsp;&nbsp;
+                    <a id="footer-follow-us-youtube"
+                       class="unstyled trendingLink fontelloIcon icon-youtube-play footerIcon"
+                       href="http://www.youtube.com/user/rottentomatoes"></a>&nbsp;&nbsp;&nbsp;
+                    <a id="footer-follow-us-tumblr" class="unstyled trendingLink fontelloIcon icon-tumblr footerIcon"
+                       href="http://rottentomatoes.tumblr.com/"></a>&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+        <div class="subtle" style="padding:10px">
+            <span class="easteregg">Copyright &copy; Fandango. All rights reserved.</span>
+            <a id="footer-privacy" href="//www.fandango.com/PrivacyPolicy">Privacy Policy</a> |
+            <a id="footer-tos" href="//www.fandango.com/terms-and-policies">Terms and Policies</a> |
+            <a id="footer-ad-choices" href="//www.aboutads.info/choices" class="adchoices">Ad Choices</a>
+        </div>
+    </div>
+
+    <div id="mobileFoot" class="visible-xs-block">
+        <div id="footer_text">
+            <div class="white">Copyright &copy; Fandango. All rights reserved. V2</div>
+            <div>
+                <a class="footerLinks" href="/terms">Terms of Service</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="footerLinks" href="/privacy">Privacy Policy</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a class="footerLinks" href="https://fandango.az1.qualtrics.com/SE/?SID=SV_cGSHgMIu5ivVwAB">Feedback</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

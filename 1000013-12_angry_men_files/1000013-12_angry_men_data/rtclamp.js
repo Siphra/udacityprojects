@@ -1,0 +1,2 @@
+define(["jquery","domReady!"],function(i){i(".clamp").each(function(){if(i(this).prop("scrollHeight")!=i(this).height()){var a=i('<div class="clamp-toggle-container"><a class="clamp-toggle">More</a></div>');i(this).after(a),a.on("click",function(){i(this).prev().addClass("unclamp"),i(this).remove()})}})});
+//# sourceMappingURL=rtclamp.min.js.map
